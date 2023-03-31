@@ -2,34 +2,544 @@
   Folha de estilo do site one page HTML5 e CSS3
   @author keil Bambo
 */
+
 /*CSS Reset */
-*{
+
+* {
   margin: 0;
   border: 0;
   padding: 0;
 }
-/* Smartphone Portrait  --------*/
+
+/* importação (Google Fonts) */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Indica que todos elementos referenciados em body devem usar esta fonte*/
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font: size 1em;
+  ;
+}
+
+/*Layout */
+
+.container {
+  margin: 0 auto;
+  /*centraliza o conteudo na tela */
+  /*background-color: #dcdcdc;*/
+}
+
+/* Flex */
+.Flex {
+  display: flex;
+  justify-content: space-between;
+
+  /*background-color: #a9a9a9;*/
+}
+
+/*Alinhamneto do conteudo com a imagem*/
+.Flex2 {
+  display: flex;
+  align-items: center
+}
+/* A linhamento no modo pc*/
+.Flex3{
+  display: flex;
+  flex-direction: column;
+}
+
+.Flex4{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/*Footer*/
+.Flex5{
+  display: flex;
+  flex-direction: column-reverse;
+
+
+}
+
+.Flex6{
+  display: flex;
+  justify-content: space-around;
+flex-direction: column;
+}
+
+/*Criação de um Botao*/
+.Botao {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
+  background-color: #c00000;
+  padding: 10px 40px;
+  /*Define espaçamento*/
+  border: 2px solid #fff;
+  /*Borda*/
+  border-radius: 25px;
+  /* cria um botão aredondado */
+
+
+}
+
+
+
+
+/* icon  Topo do Site*/
+#topo {
+  position: fixed;
+  /*Fixa permanentemente um elemento no doc HTML*/
+  right: 10px;
+  /* será 10px á direita do doc*/
+  bottom: 10px;
+  /* será 10px abaixo*/
+}
+
+
+/*Cartoes*/
+.card{
+  margin-top: 25px;
+  width: 338px;
+  height: 520px;
+  background-color: #e8e8e8;
+  border: 1px solid #a1a1a1;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.card img{
+  border-radius: 25px 25px 0px 0px;
+}
+
+.card h3{
+  margin-top: 15px;
+}
+
+.card p{
+  text-align: left;
+  color: #434343;
+  padding: 10px 30px 50px 30px;
+}
+
+.card a{
+  padding: 10px 100px;
+  border: 0;
+}
+
+/* Smartphone Portrait  --------
+===================================================*/
+
+/* Cabeçalho
+defindo a altura do Cabeçalho*/
+header {
+  height: 60px;
+
+}
+
+/* Dimensoes da imagem*/
+#logo img {
+  width: 128px;
+  /* Largura da imagem*/
+  height: 128px;
+  /*altura da imagem */
+}
+
+#check {
+  display: none;
+}
+/* Botao do menu lateral*/
+label {
+  font-size: 3em;
+  position: fixed;
+  top: 5px;
+  right: 15px;/* Fixa o elemento a uma distancia de 15px a direita da pagina*/
+  color: rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  background-color: #343538;
+  height: 100vh;
+  position: fixed;
+  top: 60px;
+  right: -100%;
+  transition: all 0.5s;
+}
+
+#check:checked~ul {
+  right: 0;
+
+}
+
+nav ul li {
+  padding: 20px;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*Destaque*/
+main {
+  height: 75vh;
+  /*o banner vai ocupar 75% da tela em qualquer dispositvo*/
+  background: url(img/banner.jpg);
+  background-size: cover;
+  /* Ajusta a imagem background ao tamnho da tela do dispositivo*/
+  color: #fff;
+  /* altera fonte*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-position:center;
+}
+
+main h1 {
+  font-size: 2.5em;
+}
+
+main h2 {
+  font-size: 1em;
+  margin: 20px 0px 50px 0px;
+  /*espaçamento: superior,direita,inferior,esquerda*/
+}
+
+/* Sobre*/
+
+#sobre {
+  padding: 50px 0px;
+  background: url(img/background.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#destaquesobre {
+  display: none;
+}
+
+/*Alinhamento de conteudo*/
+#textosobre {
+  color: #fff;
+  padding: 0px 10px;
+
+}
+
+#textosobre h1 h2 {
+  margin-bottom: 10px;
+}
+
+.topicossobre {
+  margin-top: 20px;
+
+}
+
+.topicossobre img {
+  margin-right: 10px;
+}
+
+/* One Page*/
+#onepage{
+  padding: 40px 10px;
+}
+
+#onepage h2{
+  margin-bottom: 10px;
+}
+
+#onepage p{
+  margin-bottom: 25px;
+  color: #343538;
+}
+
+#video iframe{
+width: 340px;
+height: 191px;
+
+}
+
+/*wireframe*/
+
+#textowire {
+  padding: 0px 10px;
+  color: #fff;
+
+
+}
+#wireframe{
+  background: url(img/background.png);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0px;
+}
+#textowire h2{
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+#textowire p{
+  margin-bottom: 40px;
+}
+#qrcode img{
+  display: none;
+}
+
+#textowire span{
+  display: none;
+}
+
+/*Conteúdo*/
+
+#conteudo{
+  padding: 50px 0px;
+  text-align: center;
+}
+
+#todos{
+  margin-top: 50px;
+  text-align: center;
+}
+
+#todos a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+#conteudo h2{
+  margin-bottom: 25px;
+}
+
+/*Rodapé*/
+address{
+  padding: 35px 10px 50px 10px;
+  background: url(img/background2.png);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+address a{
+  text-decoration: none;
+  color: #fff;
+}
+
+address img{
+  padding-top: 15px;
+}
+
+#iconeLocal{
+  display: none;
+}
+
+#dados{
+  margin: 0px 0px 15px 0px;
+}
+
+#googleMaps{
+  display: none;
+}
+
+footer{
+  padding: 50px;
+  background-color: #343538;
+  color: #fff;
+  text-align: center;
+}
+
+#social{
+  margin-bottom: 25px;
+}
+
+
+
 /* Smartphone Landscape -------*/
-@media (min-width:576px){
-  body{
-    background-color: #00ffff;
+@media (min-width:576px) {
+
+
+  /*Layout*/
+  .container {
+    max-width: 540px;
+    /*Define a largura máxima*/
   }
+ 
+
+/*Destaque*/
+main h1,
+main h2 {
+  text-shadow: #000 0.05em 0.05em 0.05em;
+  /* Cria uma sombra nas reading's Tags selecionadas*/
+
 }
+/*One page*/
+#video iframe{
+  width: 340px;
+  height: 191px;
+  border: 0;
+  }
+
+/*Rodapé*/
+.Flex5{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+#social{
+  margin: 0;
+}
+}
+  
+
 /*Tablet Portrait */
-@media (min-width:768px){
-  body{
-    background-color: #ff0;
+@media (min-width:768px) {
+
+  /*Layout*/
+  .container {
+    max-width: 720px;
+
+    /*Define a largura máxima*/
+  }
+
+  /*Destaque*/
+  main {
+    height: 45vh;
+  }
+
+  main h1 {
+    font-size: 5.5em;
+  }
+
+  main h2 {
+    font-size: 2em;
   }
 }
+
 /*Tablet Landscape */
-@media (min-width:992px){
-  body{
-    background-color:orange;
+@media (min-width:992px) {
+
+  /*Layout*/
+  .container {
+    max-width: 960px;
+    /*Define a largura máxima*/
+  }
+
+  /*Destaque*/
+
+  main {
+    height: 70vh;
   }
 }
+
+
 /*PC------ */
-@media (min-width:1200px){
-  body{
-    background-color:red;
+@media (min-width:1200px) {
+
+  /*Layout*/
+  .container {
+    max-width: 1140;
+    /*Define a largura máxima*/
+
+  }
+
+  /* Cabeçalho*/
+  header {
+    height: 120px;
+  }
+
+  #logo img {
+    width: 189px;
+    height: 189px;
+    margin-top: 30px;
+
+  }
+
+  label {
+    display: none;
+  }
+
+  nav ul {
+    position: static;
+    height: auto;
+    background-color: transparent;
+    margin-top: 60px;
+
+
+  }
+
+  nav ul li {
+    float: left;
+    border: 0;
+
+  }
+
+  nav ul li a {
+    color: #343538;
+  }
+
+  nav ul li a:hover {
+    color: #c00000;
+  }
+
+  /*Sobre*/
+  #destaquesobre {
+    display: inline;
+      }
+  #destaquesobre img{
+    border-radius: 50%;
+    margin-right: 50px;
+  }
+  #sobre{
+    background-attachment: fixed;
+  }
+  /*One page*/
+  .Flex3{
+    flex-direction: row;
+    align-items: center;
+  }
+/*Wireframe*/
+  #wireframe{
+background-attachment: fixed;
+  }
+#wireframe span{
+  display: inline;
+  
+}
+#qrcode{
+  display: inline;
+}
+  #qrcode img{
+    width: 225px;
+    height: 225px;
+    display: inline;
+    
+  }
+
+  /*Rodapé*/
+
+  #iconeLocal{
+    display: inline;
+
+  }
+
+  #iconeMapa{
+    display: none;
+  }
+
+  #googleMaps{
+    display: inline;
+  }
+  .Flex6{
+    flex-direction: row-reverse;
   }
 }
